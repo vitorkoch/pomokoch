@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap");
+
+h1 {
+  @apply text-accent font-bold text-3xl font-display text-center;
+}
+
+body {
+  @apply font-sans min-h-screen w-screen bg-primary flex items-start justify-center p-2 bg-center bg-[radial-gradient(circle_at_1px_1px,theme(colors.accent/40%)_1px,transparent_1px)] bg-dottedSize;
+}

@@ -1,9 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Timer from "../components/Timer/index";
 ---
 
 <Layout title="PomoKoch">
   <main>
-    <h1>PomoKoch</h1>
+    <h1 class="flex flex-row gap-2 justify-center items-center">
+      PomoKoch <img src="/favicon.ico" width="32px" />
+    </h1>
+    <div>
+      <Timer.Root client:only>
+        <Timer.Modes client:only />
+        <Timer.Time client:only />
+        <Timer.Percentage client:only />
+        <Timer.Actions client:only />
+      </Timer.Root>
+    </div>
   </main>
 </Layout>

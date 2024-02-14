@@ -8,22 +8,47 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:vue/recommended",
+    "plugin:vue/vue3-recommended",
     "plugin:tailwindcss/recommended"
   ],
   "overrides": [
     {
-      "files": ["*.astro"],
+      "files": [
+        "*.astro"
+      ],
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
+        "extraFileExtensions": [
+          ".astro"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.vue"
+      ],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      }
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
       }
     }
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint",
+    "vue"
+  ],
   "rules": {
-    "vue/multi-word-component-names": "off"
-
+    "vue/multi-word-component-names": "off",
+    "vue/max-attributes-per-line": "off"
   }
 }

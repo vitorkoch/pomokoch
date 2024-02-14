@@ -10,7 +10,6 @@ const videoID = ref(
     .replace("youtu.be/", "")
     .replace("live/", ""),
 );
-console.log(videoID.value);
 </script>
 <template>
   <iframe

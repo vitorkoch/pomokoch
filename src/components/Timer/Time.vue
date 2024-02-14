@@ -5,7 +5,7 @@ const timerData = useStore(timerStore);
 </script>
 
 <template>
-  <span class="text-2xl underline">
+  <span class="rounded-2xl bg-accent p-2 font-mono text-2xl text-primary">
     <strong>{{ timerData.display }}</strong>
   </span>
 </template>

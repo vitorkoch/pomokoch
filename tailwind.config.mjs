@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       sans: ["Lexend", "Helvetica"],
       display: ["Protest Riot", "Helvetica"],
+      mono: ["Jetbrains Mono", "monospace"],
     },
     extend: {
       colors: {

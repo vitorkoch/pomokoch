@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import { useStore } from "@nanostores/vue";
+import { musicStore } from "../../stores/musicStore";
+import { ref } from "vue";
+const musicData = useStore(musicStore);
+const videoID = ref(
+  musicData.value.youtubeURL
+    .replace("https://", "")
+    .replace("www.youtube.com/", "")
+    .replace("youtu.be/", "")
+    .replace("live/", ""),
+);
+console.log(videoID.value);
+</script>
+<template>
+  <iframe
+    class="aspect-video w-full rounded-2xl border-2 border-accent/40 bg-primary p-2"
+    :src="'https://www.youtube.com/embed/' + videoID"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  />
+</template>

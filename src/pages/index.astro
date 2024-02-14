@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Timer from "../components/Timer/index";
+import MusicIframe from "../components/MusicIframe/index.vue";
 ---
 
 <Layout title="PomoKoch">
@@ -8,13 +9,14 @@ import Timer from "../components/Timer/index";
     <h1 class="flex flex-row gap-2 justify-center items-center">
       PomoKoch <img src="/favicon.ico" width="32px" />
     </h1>
-    <div>
+    <div class="flex flex-col items-center justify-center gap-2">
       <Timer.Root client:only>
         <Timer.Modes client:only />
         <Timer.Time client:only />
         <Timer.Percentage client:only />
         <Timer.Actions client:only />
       </Timer.Root>
+      <MusicIframe />
     </div>
-  </main>
-</Layout>
+  </main></Layout
+>

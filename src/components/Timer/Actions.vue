@@ -14,22 +14,22 @@ const timerData = useStore(timerStore);
       class="transition-colors duration-300 active:text-accent"
       @click="togglePause()"
     >
-      <Play v-if="timerData.state.isPaused" :size="32" />
-      <Pause v-else :size="32" />
+      <Play v-if="timerData.state.isPaused" :size="24" />
+      <Pause v-else :size="24" />
     </button>
     <button
       type="button"
       class="transition-colors duration-300 active:text-accent"
       @click="restart()"
     >
-      <RotateCcw :size="32" />
+      <RotateCcw :size="24" />
     </button>
 
     <button
       type="button"
       class="transition-colors duration-300 active:text-accent"
     >
-      <Settings :size="32" />
+      <Settings :size="24" />
     </button>
   </section>
 </template>

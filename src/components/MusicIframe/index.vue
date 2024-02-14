@@ -13,7 +13,7 @@ const videoID = ref(
 </script>
 <template>
   <iframe
-    class="aspect-video min-w-[42rem] rounded-2xl border-2 border-accent/40 bg-primary p-2"
+    class="aspect-video w-[24rem] rounded-2xl border-2 border-accent/40 bg-primary p-2 md:w-[38rem]"
     :src="'https://www.youtube.com/embed/' + videoID"
     title="YouTube video player"
     frameborder="0"

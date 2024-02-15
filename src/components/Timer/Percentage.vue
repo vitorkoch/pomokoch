@@ -11,8 +11,8 @@ const timerData = useStore(timerStore);
     class="relative h-4 w-full overflow-hidden rounded-full bg-secondary sm:h-5 sm:w-[300px]"
   >
     <ProgressIndicator
-      class="size-full rounded-full bg-light transition-transform duration-[660ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
-      :style="`transform: translateX(-${100 - timerData.progressPercentage}%)`"
+      class="size-full rounded-full bg-light transition-transform duration-[333ms] ease-in-out"
+      :style="`transform: translateX(-${timerData.progressPercentage}%)`"
     />
   </ProgressRoot>
 </template>

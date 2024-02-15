@@ -36,6 +36,7 @@ export const timerStore = map<TimerStore>({
 
 export function changeMode(newMode: Mode) {
   timerStore.setKey("mode", newMode);
+  restart();
 }
 
 export function changeProgress(newProgress: number) {

@@ -34,7 +34,9 @@ export class Timer {
 
   remainMilisecondsOf(mode: Mode) {
     const passedMs = Date.now() - this.startTimeMs;
-    return this.modes[mode] * 60 * 1000 - passedMs;
+    const remainMs = this.modes[mode] * 60 * 1000 - passedMs;
+    if (remainMs < 0) return 0;
+    return remainMs;
   }
 
   percentageOf(mode: Mode): number {

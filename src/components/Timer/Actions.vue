@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Play, Pause, RotateCcw, Settings, X } from "lucide-vue-next";
-import { togglePause, restart } from "../../stores/timerStore";
+import { restart } from "../../stores/timerStore";
 import Config from "../Config/index.vue";
 import { timerStore } from "../../stores/timerStore";
 import { useStore } from "@nanostores/vue";
@@ -23,9 +23,9 @@ const timerData = useStore(timerStore);
     <button
       type="button"
       class="transition-colors duration-300 active:text-accent"
-      @click="togglePause()"
+      @click="timerData.timer?.togglePause()"
     >
-      <Play v-if="timerData.state.isPaused" :size="24" />
+      <Play v-if="timerData.timer?.isPaused" :size="24" />
       <Pause v-else :size="24" />
     </button>
     <button

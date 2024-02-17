@@ -15,9 +15,6 @@ type TimerStore = {
   config: Configuration;
   progressPercentage: number;
   display: string;
-  state: {
-    isPaused: boolean;
-  };
   timer: Timer | null;
 };
 
@@ -25,9 +22,6 @@ export const timerStore = map<TimerStore>({
   mode: "pomodoro",
   progressPercentage: 0,
   display: "25:00",
-  state: {
-    isPaused: false,
-  },
   config: {
     modesMinutes: defaultModesMinutes,
   },
@@ -45,11 +39,6 @@ export function changeProgress(newProgress: number) {
 
 export function changeDisplay(newDisplay: string) {
   timerStore.setKey("display", newDisplay);
-}
-
-export function togglePause() {
-  const prev = timerStore.get().state;
-  timerStore.setKey("state", { ...prev, isPaused: !prev.isPaused });
 }
 
 export function restart() {

@@ -21,6 +21,7 @@ export const defaultModesMinutes: ModesMinutes = {
 export class Timer {
   startTimeMs: number;
   modes: ModesMinutes;
+  isPaused = true;
   constructor({
     startTimeMs,
     modesMinutes,
@@ -52,5 +53,9 @@ export class Timer {
     const minutesText = `${minutes}`.padStart(2, "0");
     const secondsText = `${seconds}`.padStart(2, "0");
     return `${minutesText}:${secondsText}`;
+  }
+
+  togglePause() {
+    this.isPaused = !this.isPaused;
   }
 }

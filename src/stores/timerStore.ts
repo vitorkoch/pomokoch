@@ -48,3 +48,7 @@ export function restart() {
     new Timer({ startTimeMs: Date.now(), modesMinutes: config.modesMinutes }),
   );
 }
+
+export function togglePause() {
+  timerStore.get().timer?.togglePause();
+}

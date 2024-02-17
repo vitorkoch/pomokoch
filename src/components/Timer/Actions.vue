@@ -2,7 +2,7 @@
 import { Play, Pause, RotateCcw, Settings, X } from "lucide-vue-next";
 import { restart } from "../../stores/timerStore";
 import Config from "../Config/index.vue";
-import { timerStore } from "../../stores/timerStore";
+import { timerStore, togglePause } from "../../stores/timerStore";
 import { useStore } from "@nanostores/vue";
 import {
   DialogClose,
@@ -23,7 +23,7 @@ const timerData = useStore(timerStore);
     <button
       type="button"
       class="transition-colors duration-300 active:text-accent"
-      @click="timerData.timer?.togglePause()"
+      @click="togglePause()"
     >
       <Play v-if="timerData.timer?.isPaused" :size="24" />
       <Pause v-else :size="24" />

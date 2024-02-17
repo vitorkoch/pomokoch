@@ -21,7 +21,9 @@ export const defaultModesMinutes: ModesMinutes = {
 export class Timer {
   startTimeMs: number;
   modes: ModesMinutes;
-  isPaused = true;
+  isPaused: boolean;
+  pausedTimeMs: number;
+
   constructor({
     startTimeMs,
     modesMinutes,
@@ -31,6 +33,8 @@ export class Timer {
   }) {
     this.startTimeMs = startTimeMs;
     this.modes = { ...defaultModesMinutes, ...modesMinutes };
+    this.isPaused = true;
+    this.pausedTimeMs = 0;
   }
 
   remainMilisecondsOf(mode: Mode) {

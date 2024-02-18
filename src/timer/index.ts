@@ -22,7 +22,8 @@ export class Timer {
   startTimeMs: number;
   modes: ModesMinutes;
   isPaused: boolean;
-  pausedTimeMs: number;
+  pauseStartTimeMs: number;
+  totalPausedTimeMs: number;
 
   constructor({
     startTimeMs,
@@ -34,10 +35,12 @@ export class Timer {
     this.startTimeMs = startTimeMs;
     this.modes = { ...defaultModesMinutes, ...modesMinutes };
     this.isPaused = true;
-    this.pausedTimeMs = 0;
+    this.pauseStartTimeMs = 0;
+    this.totalPausedTimeMs = 0;
   }
 
   remainMilisecondsOf(mode: Mode) {
+    console.log(this.totalPausedTimeMs);
     const passedMs = Date.now() - this.startTimeMs;
     const remainMs = this.modes[mode] * 60 * 1000 - passedMs;
     if (remainMs < 0) return 0;
@@ -60,6 +63,12 @@ export class Timer {
   }
 
   togglePause() {
+    if (this.isPaused) {
+      this.totalPausedTimeMs += Date.now() - this.pauseStartTimeMs;
+      this.pauseStartTimeMs = 0;
+    } else {
+      this.pauseStartTimeMs = Date.now();
+    }
     this.isPaused = !this.isPaused;
   }
 }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Play, Pause, RotateCcw, Settings, X } from "lucide-vue-next";
 import { restart } from "../../stores/timerStore";
 import Config from "../Config/index.vue";
 import { timerStore, togglePause } from "../../stores/timerStore";
@@ -14,6 +13,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "radix-vue";
+import {
+  PhGear,
+  PhArrowCounterClockwise,
+  PhPlay,
+  PhPause,
+  PhX,
+} from "@phosphor-icons/vue";
 const timerData = useStore(timerStore);
 </script>
 <template>
@@ -25,20 +31,20 @@ const timerData = useStore(timerStore);
       class="transition-colors duration-300 active:text-accent"
       @click="togglePause()"
     >
-      <Play v-if="timerData.timer?.isPaused" :size="24" />
-      <Pause v-else :size="24" />
+      <PhPlay v-if="timerData.timer?.isPaused" :size="32" />
+      <PhPause v-else :size="32" />
     </button>
     <button
       type="button"
       class="transition-colors duration-300 active:text-accent"
       @click="restart()"
     >
-      <RotateCcw :size="24" />
+      <PhArrowCounterClockwise :size="32" />
     </button>
 
     <DialogRoot>
       <DialogTrigger class="transition-colors duration-300 active:text-accent">
-        <Settings :size="24" />
+        <PhGear :size="32" />
       </DialogTrigger>
 
       <DialogPortal>
@@ -48,8 +54,8 @@ const timerData = useStore(timerStore);
         >
           <div class="flex h-fit flex-col items-center justify-center">
             <DialogClose>
-              <X
-                :size="28"
+              <PhX
+                :size="32"
                 class="transition-colors duration-300 active:text-accent"
               />
             </DialogClose>

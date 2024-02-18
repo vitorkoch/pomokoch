@@ -1,5 +1,5 @@
 <script setup>
-import { Heart } from "lucide-vue-next";
+import { PhHeartStraight } from "@phosphor-icons/vue";
 </script>
 <template>
   <footer
@@ -12,6 +12,9 @@ import { Heart } from "lucide-vue-next";
         here
       </a>
     </span>
-    <span>Have a good productivity! <Heart class="inline text-accent" /></span>
+    <span class="flex items-center justify-center gap-1">
+      Have a good productivity!
+      <PhHeartStraight class="inline text-accent" :size="20" weight="fill" />
+    </span>
   </footer>
 </template>
